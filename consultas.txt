@@ -1,0 +1,44 @@
+Scripts de consultas a la base de datos.
+
+1- Mostrar todas las habitaciones disponibles:
+Esta consulta seleccionará todas las filas de la tabla de habitaciones donde
+el valor del campo disponible es verdadero.
+
+SELECT * FROM habitaciones WHERE disponible = true;
+
+
+2- Mostrar el precio por noche de una habitación específica:
+
+Esta consulta seleccionará el valor del campo precio_noche de la fila correspondiente
+a la habitación de tipo "suite".
+
+SELECT precio_noche FROM habitaciones WHERE tipo = 'suite';
+
+3- Mostrar el total de ingresos de todas las facturas emitidas:
+
+Esta consulta sumará todos los valores del campo total de la tabla de facturas y
+los mostrará como una columna llamada total_ingresos.
+
+SELECT SUM(total) AS total_ingresos FROM facturas;
+
+
+4- Mostrar el nombre y el precio de todos los servicios disponibles:
+
+Esta consulta seleccionará las columnas nombre y precio de todas las filas de la tabla
+de servicios donde el valor del campo disponible es verdadero.
+
+SELECT nombre, precio FROM servicios WHERE disponible = true;
+
+
+5- Mostrar el número de reservas realizadas por un cliente específico:
+
+Esta consulta contará todas las filas de la tabla de reservas donde el valor del campo cliente_id es igual a 1234 y
+los mostrará como una columna llamada total_reservas.
+
+SELECT COUNT(*) AS total_reservas FROM reservas WHERE cliente_id = 1234;
+
+
+
+
+
+
