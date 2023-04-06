@@ -35,3 +35,55 @@ CREATE TABLE clientes
         (id)
 );
 
+
+        -- Se insertan datos de prueba para verificar y validar la funcionalidad de la base de datos.
+
+        INSERT INTO clientes
+            (nombre, apellido, correo, telefono)
+        VALUES
+            ('Juan', 'Pérez', 'juan.perez@gmail.com', '555-1234');
+
+        INSERT INTO reservas
+            (id_cliente, fecha_llegada, fecha_salida, habitacion)
+        VALUES
+            (1, '2023-04-10', '2023-04-15', '101');
+
+
+
+        -- Tabla de empleados. 
+
+        CREATE TABLE empleados
+        (
+            id INT
+            AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR
+            (50) NOT NULL,
+  posicion VARCHAR
+            (50) NOT NULL,
+  salario DECIMAL
+            (10,2) NOT NULL,
+  fecha_contratacion DATE NOT NULL,
+  disponible BOOLEAN NOT NULL DEFAULT true
+);
+
+
+            -- Tabla de facturas. 
+
+            CREATE TABLE facturas
+            (
+                id INT
+                AUTO_INCREMENT PRIMARY KEY,
+  id_reserva INT NOT NULL,
+  id_servicio INT,
+  fecha_factura DATE NOT NULL,
+  importe DECIMAL
+                (10,2) NOT NULL,
+  CONSTRAINT fk_reserva FOREIGN KEY
+                (id_reserva) REFERENCES reservas
+                (id),
+  CONSTRAINT fk_servicio FOREIGN KEY
+                (id_servicio) REFERENCES servicios
+                (id)
+);
+
+
