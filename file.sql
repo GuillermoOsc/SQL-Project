@@ -87,3 +87,28 @@ CREATE TABLE clientes
 );
 
 
+                -- Tabla de habitaciones. 
+
+                CREATE TABLE habitaciones
+                (
+                    id INT
+                    AUTO_INCREMENT PRIMARY KEY,
+  tipo VARCHAR
+                    (50) NOT NULL,
+  precio_noche DECIMAL
+                    (10,2) NOT NULL,
+  disponible BOOLEAN NOT NULL DEFAULT true
+);
+
+
+                    -- Tabla de servicios. 
+
+                    CREATE TABLE servicios
+                    (
+                        id INT
+                        AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR
+                        (50) NOT NULL,
+  precio DECIMAL
+                        (10,2) NOT NULL
+);
